@@ -9,9 +9,9 @@ use strict;
 
 my $tree_functions = Bio::Tree::Tree->new();
 my $db = Bio::DB::Taxonomy->new( -source => 'flatfile',
-                                 -directory => '/home/mwachholtz/tmp',
-                                 -nodesfile => '/home/mwachholtz/taxonomy/nodes.dmp',
-                                 -namesfile => '/home/mwachholtz/taxonomy/names.dmp' );
+                                 -directory => '/home/username/tmp',
+                                 -nodesfile => '/home/username/taxonomy/nodes.dmp',
+                                 -namesfile => '/home/username/taxonomy/names.dmp' );
 my $report = Bio::SearchIO->new( -format => 'blastxml', 
                                  -file => $ARGV[0] );
 my $numFile = ">".$ARGV[0].".contaminants";
@@ -25,7 +25,7 @@ my ( $taxonName, $isPlant, $plantHit, $counter );
 my ( $numPlant, $numBug, $numOther, $numUnlisted, $numBacteria, $numFungi, $numArchaea, $numVirus );
 
 my %gi_taxid_table = ();
-open( ACC, "/home/mwachholtz/taxonomy/gi_taxid_prot.dmp");
+open( ACC, "/home/username/taxonomy/gi_taxid_prot.dmp");
 
 my $count = 0;
 print "Creating hash\n";
